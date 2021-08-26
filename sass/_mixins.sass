@@ -1,0 +1,51 @@
+@import '~@/sass/variable'
+
+@mixin desktop
+  @media screen and (max-width: $desktop)
+    @content
+
+@mixin laptop
+  @media screen and (max-width: $laptop)
+    @content
+
+@mixin pad
+  @media screen and (max-width: $pad)
+    @content
+
+@mixin mobile
+  @media screen and (max-width: $mobile)
+    @content
+
+@mixin mobile-s
+  @media screen and (max-width: $mobile-s)
+    @content
+
+@mixin margin-center
+  margin-left: auto
+  margin-right: auto
+
+@mixin flex-center($direction: row)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: $direction
+
+@mixin absolute-center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+@mixin lineclamp($clampSize)
+  @if $clampSize > 1
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: $clampSize
+    overflow: hidden
+  @else
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+
+@mixin transition($style, $time: 0.25s, $animationType: ease)
+  transition: $style $time $animationType
